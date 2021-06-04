@@ -9,6 +9,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "csv-parser": "^3.0.0",
+    "fs": "0.0.1-security",
+    "length-distance-converter": "^1.0.2",
     "node-fetch": "^2.6.1"
   }
 }

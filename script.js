@@ -1,4 +1,7 @@
 const fetch = require("node-fetch");
+const converter = require("length-distance-converter");
+const csv = require('csv-parser');
+const fs = require('fs');
 
 function getDistance(Location) {
 
@@ -9,7 +12,13 @@ function getDistance(Location) {
             return response.json();
         })
         .then(function(data) {
-            console.log(data.rows.elements);
+            console.log(data.rows[0].elements[0].distance);
+            var kilo = data.rows[0].elements[0].distance.value / 1000;
+            console.log(kilo);
+            var miles = converter.kmToMiles(kilo);
+            console.log(miles);
+            miles = Math.round(miles * 10) / 10;
+            console.log(miles);
         })
 };
 
